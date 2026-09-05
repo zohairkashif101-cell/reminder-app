@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reminder App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Task Reminders</h1>
+      <p>Stay on track with scheduled alerts</p>
+    </header>
+
+    <main class="app-main">
+      <!-- Create Reminder Form -->
+      <section class="card form-card">
+        <h2>Add New Reminder</h2>
+        <form id="reminder-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title" 
+              placeholder="e.g., Complete project deliverable" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="remindertime">Reminder Time</label>
+            <input 
+              type="datetime-local" 
+              id="remindertime" 
+              name="remindertime" 
+              required 
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            Set Reminder
+          </button>
+        </form>
+      </section>
+
+      <!-- Reminders List -->
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>Your Reminders</h2>
+          <span class="badge" id="reminder-count">0 items</span>
+        </div>
+
+        <ul class="reminder-list" id="reminder-list">
+          <!-- Dynamic Items Injected Here -->
+        </ul>
+
+        <div class="empty-state hidden" id="empty-state">
+          <p>No reminders set yet. Add one above to get started!</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
